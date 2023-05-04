@@ -1,12 +1,18 @@
-﻿<Window x:Class="PassportCheck.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PassportCheck"
+        xmlns:Collections="clr-namespace:System.Collections;assembly=mscorlib" x:Class="PassportCheck.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Check Pass"
+   MinWidth="1330px" MinHeight="650px" Height="622" Width="1310" 
+    Background="#FFE1D5C9" FontSize="14" WindowStartupLocation="CenterScreen" 
+    WindowState="Maximized" Icon="/passport.ico">
+    <Window.Resources></Window.Resources>
+
     <Grid>
-        
+        <Frame Name="MainContent"/>
     </Grid>
 </Window>

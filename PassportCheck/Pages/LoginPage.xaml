@@ -1,0 +1,58 @@
+﻿<Page x:Class="PassportCheck.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PassportCheck.Pages"
+      mc:Ignorable="d" 
+      Title="LoginPage"
+      Background="#E1D5C9" MinHeight="600px" MinWidth="600px" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#222325"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="20"  Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#C49551"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#C49551" CornerRadius="0,0,10,10">
+            <TextBlock Grid.Row="0" Text="Login" FontSize="36" Foreground="#E1D5C9" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+        <Border Margin="50" MinWidth="600px" Width="600px" Grid.Row="1" BorderBrush="#C49551" BorderThickness="1" CornerRadius="25">
+            <StackPanel MinWidth="500px"  Width="500px" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Content="Username" Foreground="#C49551"/>
+                <TextBox Name="textBoxUsername" FontSize="18" BorderBrush="#C49551" BorderThickness="2" Height="30" Margin="0,0,0,10"/>
+                <Label Content="Password" Foreground="#C49551"/>
+                <StackPanel Orientation="Horizontal">
+                    <PasswordBox Name="textBoxPassword" FontSize="18" BorderBrush="#C49551" BorderThickness="2" Width="460" Height="30" Margin="0,0,0,10"/>
+                    <TextBox x:Name="textBoxPasswordVisible" Visibility="Collapsed" Width="460" HorizontalAlignment="Left" FontSize="18" BorderBrush="#C49551" BorderThickness="2" Height="30" Margin="0,0,0,10"/>
+                    <Button Name="showPassword" Grid.Column="1" PreviewMouseDown="showPassword_PreviewMouseDown" PreviewMouseUp="showPassword_PreviewMouseUp" Height="30" Width="30" Margin="10,0,0,10"/>
+                </StackPanel>
+
+                <Button Name="buttonLogin" IsDefault="True" Content="Login" Margin="0,20,0,0" Height="40" Click="buttonLogin_Click"/>
+                <Button x:Name="buttonRegister" Content="Don't have an Account? Create one" Margin="0,20,0,0" Height="40" Click="buttonRegister_Click"/>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>
