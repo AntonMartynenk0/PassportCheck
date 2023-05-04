@@ -68,6 +68,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Entities\Passport.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="LoginRegisterWindow.xaml.cs">
       <DependentUpon>LoginRegisterWindow.xaml</DependentUpon>
     </Compile>
