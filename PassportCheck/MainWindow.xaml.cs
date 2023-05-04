@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CheckPass;
+using PassportCheck.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,13 @@ namespace PassportCheck
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(User user)
         {
             InitializeComponent();
+            //users.Add(new User("Admin", "admin", Entities.Role.ADMIN, "admin"));
+            //ExportData exportData = new ExportData();
+            //exportData.ExportToBinaryFile(@"..\..\Data\users.bin", users);
+            MainContent.NavigationService.Navigate(new MainPage(user));
         }
     }
 }
